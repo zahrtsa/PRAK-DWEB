@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program Pythagoras Sederhana</title>
+  </head>
+  <body>
+    <h2>Program Pythagoras</h2>
+
+    <!--Menginput nilai sisiA dan sisiB-->
+    <label>Sisi a: <input type="number" id="sisiA" /></label><br /><br />
+    <label>Sisi b: <input type="number" id="sisiB" /></label><br /><br />
+
+    <!--Menggunakan JavaScript untuk melakukan perhitungan pythagoras didalam file html
+        Ketika button "Hitung sisi miring" di tekan atau di klik maka akan memanggil 
+        function hitungSisiMiring
+    -->
+    <button onclick="hitungSisiMiring()">Hitung Sisi Miring</button>
+    <p id="hasil"></p>
+    <!--Menampilkan output sesuai id-->
+
+    <!--Membuat Script Java didalam file .html-->
+    <script>
+      function hitungSisiMiring() {
+        let a = parseFloat(document.getElementById("sisiA").value);
+        let b = parseFloat(document.getElementById("sisiB").value);
+        //Melakukan perhitungan dan menampilkan output sesuai kondisi
+        if (a && b) {
+          //Mencari nilai c dengan rumus pythagoras
+          let c = Math.sqrt(a * a + b * b).toFixed(2);
+          //akan menampilkan output melalui innerHTMl pada tag <p> yang memiliki id-"hasil"
+          document.getElementById("hasil").innerHTML = "Sisi miring (c): " + c;
+        } else {
+          //output akan tampil jika salah satu nilai tidak dimasukan
+          document.getElementById("hasil").innerHTML = "Masukkan kedua sisi!";
+        }
+      }
+    </script>
+  </body>
+</html>
